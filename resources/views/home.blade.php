@@ -5,17 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <a class="btn btn-success mb-2" href="{{'/form'}}">Agregar Cliente</a>
+                <a class="btn btn-success mb-2" href="{{'/'}}">Listar Cliente</a>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
+                
+                    <h2 class="text-center mb-2">Consumiendo API</h2>
+                   
                 </div>
+               
+
             </div>
         </div>
         @foreach ($usuariosArray as $usuario)

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,11 +13,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'ClienteController@list');
+Route::get('/form', 'ClienteController@clientform');
+Route::post('/save', 'ClienteController@save')->name('save');    
